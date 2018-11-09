@@ -1,0 +1,44 @@
+<!--pages/cart/cart.wxml-->
+<scroll-view class='tl-cart-top' scroll-y>
+  <view class='tl-cart-header'>
+    <text>共{{cartData.length}}件宝贝</text>
+  </view>
+  <view class='tl-cart-body'>
+    <view class='body-title'>快来清空购物车吧</view>
+    <view
+      wx:for="{{cartData}}"
+      wx:key="{{item}}"
+      bindtouchstart="touchstart"
+      bindtouchmove="touchmove"
+      data-index="{{index}}"
+      class="item-wrap {{item.isTouchMove ? 'touch-move-active' : ''}}"
+    >
+      <view class='body-item' data-index="{{index}}">
+        <checkbox color='red' class='check-one' catchtap='checkboxChange' data-id='{{item.id}}' checked='{{item.isChecked}}'/>
+        <image src='{{item.image}}' catchtap='goDetail' data-id="{{item.id}}"></image>
+        <view class='item-msgs' catchtap='goDetail' data-id="{{item.id}}">
+          <view class='msgs-title'>{{item.title}}</view>
+          <view class='msgs-bottom'>
+            <text class='price'>￥{{item.price}}</text>
+            <view class='change-count'>
+              <text class='btn reduce' catchtap='reduceCount' data-id="{{item.id}}">-</text>
+              <text class='count'>{{item.count}}</text>
+              <text class='btn add' catchtap='addCount' data-id="{{item.id}}">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="del" catchtap="del" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>
+</scroll-view>
+<view class='tl-cart-bottom'>
+  <view class='checkAll'>
+    <checkbox color='red' checked='{{isAllChecked}}' catchtap='checkedAll' data-isc="{{!isAllChecked}}"></checkbox>全选
+  </view>
+  <view class='countAll'>
+    <view class='showCount'>合计：<text>￥{{total}}</text></view>
+    <button catchtap='goPay'>结算</button>
+  </view>
+</view>
+

@@ -1,0 +1,10 @@
+@import 'libs/weui/weui.wxss';
+/**app.wxss**/
+view,scroll-view{
+  box-sizing: border-box;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

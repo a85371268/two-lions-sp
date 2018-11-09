@@ -1,0 +1,43 @@
+/* components/Home/ListItem.wxss */
+.list-item{
+  width: 357rpx;
+  height: 541rpx;
+  background: white;
+  margin-bottom: 12rpx;
+}
+.list-item>image{
+  width: 100%;
+  height: 357rpx;
+}
+.list-item .list-bottom{
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.list-item .list-bottom .title{
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #857a74;
+}
+.list-item .list-bottom .transport{
+  text-align: right;
+  color: #bebebe;
+  font-size: 28rpx;
+}
+.list-item .list-bottom .price{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; 
+  font-size: 24rpx;
+  color: #bebebe;
+}
+.list-item .list-bottom .price .left{
+  font-size: 38rpx;
+  color: #ff6c6c;
+  font-weight: bolder;
+}
+.list-item .list-bottom .price .left>text{
+  font-size: 24rpx;
+  font-weight: normal;
+}

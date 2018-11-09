@@ -1,0 +1,65 @@
+<view class='tl-home' scroll-y bindscrolltolower="lower">
+  <view class='tl-home-swiper'>
+    <swiper
+      class='swiper-wrapper'
+      indicator-dots=true
+      indicator-color="#ffffff"
+      indicator-active-color="#f8e078"
+      autoplay=true
+      circular=true
+      duration="500"
+      interval="3000"
+    >
+      <block wx:for="{{banners}}" wx:key="item" wx:key="item">
+        <swiper-item>
+          <image src="{{item.imageUrl}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="search-box" bindtap='goSearch'>
+      <icon type="search" size='20' color='#8e8e92'/>
+      <text>搜索商品</text>
+    </view>
+  </view>
+  <view class='tl-home-grids'>
+    <view class='grid' wx:for="{{grids}}" wx:key="item">
+      <view class='title'>{{item.title}}</view>
+      <view class='sub-title'>{{item.text}}</view>
+      <image src='{{item.imageUrl}}'></image>
+    </view>
+  </view>
+  <view class='tl-home-toplist'>
+    <view class='toplist-title'>
+      <text>每日Top5</text>
+      <view class='title-right'>
+        <text>查看全部</text>
+        <image src='/assets/icon/goto.png'></image>
+      </view>
+    </view>
+    <scroll-view class='toplist-body' scroll-x>
+      <view class='body-item' wx:for="{{topList}}" wx:key="{{item}}" bindtap="goDetail" data-id="{{item.id}}">
+        <image src='{{item.image}}'></image>
+        <view class='title'>{{item.title}}</view>
+        <view class='bottom'>
+          <view class='left'><text>￥</text>{{item.price}}</view>
+          <view class='right'>{{item.saleNum}}人已买</view>
+        </view>
+      </view> 
+    </scroll-view>
+  </view>
+  <view class='tl-home-listtitle'>
+    <text class='line'></text>
+    <text class='title'>双11必买，每日更新</text>
+    <text class='line'></text>
+  </view>
+  <view class='tl-home-list'>
+    <view wx:for="{{list}}" wx:key="{{item}}">
+      <view class='list-item-pic' wx:if="{{item.type===2}}">
+        <image src='{{item.image}}'></image>
+      </view>
+      <list-item item="{{item}}" wx:else></list-item>
+    </view>   
+  </view>
+</view>
+
+

@@ -1,0 +1,12 @@
+<!--pages/list/list.wxml-->
+<list-tabs bind:sortList="sortList"></list-tabs>
+<view class='list-wrapper'>
+  <list-item
+   wx:for="{{kindsData}}"
+   wx:key="{{item}}"
+   item="{{item}}"
+   bindtap="goDetail"
+   data-id="{{item.id}}"
+  ></list-item>
+</view>
+

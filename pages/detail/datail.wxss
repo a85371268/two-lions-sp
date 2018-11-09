@@ -1,0 +1,207 @@
+/* pages/detail/datail.wxss */
+page{
+  height: 100%;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.tl-detail{
+  flex: 1;
+  overflow: hidden;
+}
+.tl-detail-swiper{
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+.tl-detail-swiper swiper{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.tl-detail-swiper swiper swiper-item{
+  width: 100%;
+  height: 100%;
+}
+swiper-item>image{
+  width: 100%;
+  height: 100%
+}
+.tl-detail .show-price{
+  height: 112rpx;
+  background: #FA585A;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 24rpx;
+  padding-bottom: 25rpx;
+  justify-content: space-between;
+  color: white;
+}
+.tl-detail .show-price .price-top{
+  height: 80rpx;
+  vertical-align: bottom;
+}
+.price-top .price-now{
+  font-size: 80rpx;
+  line-height: 90rpx;
+  font-weight: bolder;
+  float: left;
+}
+.price-top .price-now>text{
+  font-size: 30rpx;
+  font-weight: normal;
+}
+.price-top .price-befor{
+  margin-left: 20rpx;
+  line-height: 130rpx;
+  font-size: 20rpx;
+  opacity: .5;
+  vertical-align: bottom;
+  float: left;
+  text-decoration-line: line-through;
+}
+.show-price .sale{
+  font-size: 20rpx;
+}
+
+/*商品详细信息展示*/
+.tl-detail .msgs{
+  margin-bottom: 12rpx;
+}
+.tl-detail .msgs .msgs-title{
+  height: 150rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  display: table;
+  color: #43240C;
+  background: white;
+}
+.tl-detail .msgs .msgs-title>text{
+  display: table-cell;
+  vertical-align: middle;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.msgs .promise{
+  height: 70rpx;
+  background: white;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+}
+.msgs .promise .promise-item{
+  display: flex;
+  align-items: center;
+}
+.msgs .promise image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.msgs .promise text{
+  font-size: 20rpx;
+  padding-left: 10rpx;
+  margin-right: 30rpx;
+  color: #ABA19C;
+}
+
+/*msg-shop*/
+.tl-detail .shop{
+  height: 120rpx;
+  background: white;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tl-detail .shop .left{
+  display: flex;
+}
+.tl-detail .shop .left .left-image{
+  width: 90rpx;
+  height: 90rpx;
+  border: 1rpx solid #E0E0E0;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.left .left-image image{
+  width: 100%;
+  height: 100%;
+}
+.shop-msg{
+  margin-left: 20rpx;
+  padding-top: 5rpx;
+}
+.shop-msg .shop-title{
+  font-size: 26rpx;
+  color: #43240C;
+}
+.shop-msg .shop-score{
+  font-size: 20rpx;
+  margin-top: 10rpx;
+}
+.shop-msg .shop-score text{
+  margin-right: 20rpx;
+  color: #ABA19C;
+}
+.right{
+  display: flex;
+  align-items: center;
+}
+.right text{
+  font-size: 22rpx;
+  color: #ABA19C;
+}
+.right image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.details-title{
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.details-title .line{
+  display: inline-block;
+  width: 70rpx;
+  height: 2rpx;
+  background: #BFB7B4;
+  vertical-align: middle;
+}
+.details-title .text{
+  font-size: 24rpx;
+  padding: 0 30rpx;
+  color: #BFB7B4;
+}
+.details-pics{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 24rpx;
+  background: white;
+  padding-bottom: 50rpx;
+}
+.details-pics image{
+  width: 702rpx;
+}
+.btns{
+  height: 120rpx;
+  display: flex;
+  width: 750rpx;
+}
+.btns .btn{
+  height: 100%;
+  flex: 1;
+  text-align: center;
+  line-height: 120rpx;
+  color: white;
+  font-size: 30rpx;
+}
+.btns .btn-left{
+  background: #ff8a00;
+}
+.btns .btn-right{
+  background: #F9585A;
+}

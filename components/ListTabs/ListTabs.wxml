@@ -1,0 +1,11 @@
+<!--components/ListTabs/ListTabs.wxml-->
+<view class='list-tabs'>
+  <view
+   wx:for="{{msg}}"
+   wx:key="{{item}}"
+   class="{{item.id===currentId?'list-tab tab-active':'list-tab'}}"
+   catchtap='sort'
+   data-id="{{item.id}}"
+  >{{item.text}}
+  </view>
+</view>

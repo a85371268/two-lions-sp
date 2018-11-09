@@ -1,0 +1,163 @@
+/* pages/cart/cart.wxss */
+page{
+  background: #F5F5F5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tl-cart-top{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.tl-cart-header{
+  height: 200rpx;
+  background: #FDE25C;
+  text-align: center;
+}
+.tl-cart-header text{
+  font-size: 24rpx;
+}
+.tl-cart-body{
+  width: 94%;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 60rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  padding-bottom: 70rpx;
+  margin-bottom: 30rpx;
+}
+.tl-cart-body .body-title{
+  height: 70rpx;
+  line-height: 70rpx;
+  background: white;
+  font-size: 26rpx;
+  padding-left: 50rpx;
+  color: #333333;
+}
+.item-wrap{
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.body-item{
+  display: flex;
+  align-items: center;
+  background: #FFF8F4;
+  width: 100%;
+  padding: 25rpx;
+  position: relative;
+  overflow: hidden;
+  transform: translateX(150rpx);
+  margin-left: -150rpx;
+  transition: transform 0.4s;
+}
+.body-item .check-one{
+  padding: 40rpx 0;
+}
+.body-item image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 16rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.body-item .item-msgs{
+  height: 160rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.del{
+  text-align: center;
+  width: 150rpx;
+  line-height: 200rpx;
+  background: #F9585A;
+  color: white;
+  transform: translateX(150rpx);
+  transition: transform 0.4s;
+}
+.item-msgs .msgs-title{
+  font-size: 24rpx;
+}
+.touch-move-active .body-item, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.msgs-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.msgs-bottom .price{
+  font-size: 30rpx;
+  color: #FA585A;
+}
+.msgs-bottom .change-count{
+  border: 2rpx solid #EEEAE8;
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.change-count .btn{
+  width: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.change-count .count{
+  border-left: 2rpx solid #EEEAE8;
+  border-right: 2rpx solid #EEEAE8;
+  flex: 1;
+  text-align: center;
+  font-size: 27rpx;
+}
+.tl-cart-bottom{
+  height:110rpx;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-top: 1rpx solid #DDDDDD;
+}
+.tl-cart-bottom .checkAll{
+  font-size: 26rpx;
+  color: #666666;
+}
+.tl-cart-bottom .checkAll checkbox{
+  margin-right: 10rpx;
+}
+.tl-cart-bottom .countAll{
+  display: flex;
+  align-items: center;
+}
+.countAll .showCount{
+  font-size: 28rpx;
+  color: #4F4F4F;
+}
+.countAll .showCount text{
+  color:  #FA585A;
+  font-size: 30rpx;
+}
+.countAll button{
+  height: 80rpx;
+  width: 230rpx;
+  line-height: 80rpx;
+  border-radius: 80rpx;
+  background: #FF5200;
+  color: white;
+  border: 0;
+  margin-left: 10rpx;
+  font-size: 32rpx;
+}

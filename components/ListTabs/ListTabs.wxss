@@ -1,0 +1,18 @@
+/* components/ListTabs/ListTabs.wxss */
+.list-tabs{
+  height: 80rpx;
+  background:white;
+  border-bottom: 1rpx solid #bebebe;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.list-tabs .list-tab{
+  font-size: 26rpx;
+  line-height: 80rpx;
+  color: #452c18;
+}
+.list-tabs .tab-active{
+  color: #ff6c6c;
+}

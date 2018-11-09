@@ -1,0 +1,12 @@
+<!--components/Home/ListItem.wxml-->
+<view class='list-item' bindtap="goDetail" data-id="{{item.id}}">
+  <image src='{{item.image}}'></image>
+  <view class='list-bottom'>
+    <view class='title'>{{item.title}}</view>
+    <view class='transport'>包邮</view>
+    <view class='price'>
+      <view class='left'><text>￥</text>{{item.price}}</view>
+      <view class='right'>{{item.saleNum}}人已买</view>
+    </view>
+  </view>
+</view>

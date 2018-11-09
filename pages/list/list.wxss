@@ -1,0 +1,13 @@
+/* pages/list/list.wxss */
+page{
+  height: 100%;
+  background: #f5f5f5;
+}
+.list-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12rpx;
+  padding-left: 12rpx;
+  padding-right: 12rpx;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list-item": "/components/ListItem/ListItem",
+    "list-tabs":"/components/ListTabs/ListTabs"
+  }
+}

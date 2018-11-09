@@ -1,0 +1,38 @@
+/* pages/search/search.wxss */
+.page__bd .weui-search-bar{
+  background-color: #FDE250;
+  border: 0;
+}
+.weui-search-bar__cancel-btn{
+  color: #43240C;
+  font-size: 32rpx;
+}
+.searchList{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.title{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #43240C;
+}
+.items-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.items{
+  display: inline-block;
+  background: #F5F5F5;
+  font-size: 30rpx;
+  padding: 10rpx 25rpx;
+  border-radius: 15rpx;
+  margin-right: 30rpx;
+  margin-bottom: 35rpx;
+}
+.hotList{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}

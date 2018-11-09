@@ -1,0 +1,33 @@
+<!--pages/mall/mall.wxml-->
+<view class='tl-mall'>
+  <scroll-view class='tl-mall-left' scroll-y>
+    <view
+     class="{{currentId===item.id?'kinds-selected kinds-nav':'kinds-nav'}}"
+     wx:for="{{navList}}"
+     wx:key="{{item}}"
+     catchtap='changeKinds'
+     data-id="{{item.id}}"
+     data-title="{{item.name}}"
+    >{{item.name}}</view>
+  </scroll-view>
+  <scroll-view class='tl-mall-right' scroll-y>
+    <view class='title'>
+      <view class='line'></view>
+      <text class='text'>{{kindsTitle}}</text>
+      <view class='line'></view>
+    </view>
+    <view class='kinds-wrapper'>
+      <view
+       wx:for="{{kindsList}}"
+       wx:if="{{item.title!=='双十一女装'&&item.title!=='双11精选'&&item.title!=='双十一美妆'}}"
+       wx:key="{{item}}"
+       class='kinds'
+       bindtap='showKinds'
+       data-id="{{item.url}}"
+      >
+        <image src='{{item.imageUrl}}'></image>
+        <text>{{item.title}}</text>
+      </view>  
+    </view>
+  </scroll-view>
+</view>

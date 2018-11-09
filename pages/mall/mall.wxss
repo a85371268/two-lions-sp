@@ -1,0 +1,74 @@
+/* pages/mall/mall.wxss */
+page{
+  height: 100%;
+}
+.tl-mall{
+  height: 100%;
+}
+.tl-mall-left{
+  width: 189rpx;
+  height: 100%;
+  border-right: 1rpx solid #aaaaaa;
+  padding-bottom: 30rpx;
+  float: left;
+}
+.tl-mall-left .kinds-nav{
+  border-right: 6rpx solid transparent;
+  text-align: center;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  color: #857a74;
+}
+.tl-mall-left .kinds-selected{
+  border-right: 6rpx solid #f6c844;
+  color: #f6c844;
+  background: #f5f5f5;
+}
+
+/*right部分*/
+.tl-mall-right{
+  width: 561rpx;
+  float: left;
+  height: 100%;
+}
+.tl-mall-right .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.tl-mall-right .title .line{
+  width: 54rpx;
+  height: 2rpx;
+  background: #d9d9d9;
+}
+.tl-mall-right .title .text{
+  font-size: 24rpx;
+  color: #857a74;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+.tl-mall-right .kinds-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.kinds-wrapper .kinds{
+   width: 120rpx;
+   text-align: center;
+   margin: 31rpx;
+ }
+.kinds-wrapper .kinds>image{
+   width: 120rpx;
+   height: 120rpx;
+   float: left;
+   margin-bottom: 10rpx;
+ }
+.kinds-wrapper .kinds>text{
+  font-size: 24rpx;
+  color: #857a74;
+  display: inline-block;
+  line-height: 20rpx;
+  float: left;
+  width: 100%;
+}
