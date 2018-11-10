@@ -9,7 +9,9 @@ Page({
     imgUrls: [],
     detailData:{},
     shopData:{},
-    imgs:[]
+    imgs:[],
+    browseData:{},
+    oldPrice: 0
   },
   addCart(e){
     wx.showToast({
@@ -33,6 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this;
     //请求数据
     ajax.get(`https://www.xiongmaoyouxuan.com/api/detail?id=${options.id}`)
       .then((resp)=>{
@@ -42,10 +45,45 @@ Page({
             imgUrls: data.detail.photo,
             detailData: data.detail,
             shopData: data.detail.shop,
-            imgs: data.detail.descContentList
+            imgs: data.detail.descContentList,
+            oldPrice: (data.detail.price + 23).toFixed(2),
+            browseData:{
+              id: data.detail.id,
+              image: data.detail.image,
+              price: data.detail.price,
+              title: data.detail.title,
+              saleNum: data.detail.saleNum
+            }
+          })
+          //同步需要的信息到storage
+          wx.getStorage({
+            key: 'browse',
+            success(res) {
+              //有其他历史
+              const arr = res.data;
+              const newArr = arr.filter(item => {
+                return item.id !== that.data.detailData.id
+              })
+              newArr.unshift(that.data.browseData)
+              wx.setStorageSync('browse', newArr)
+            },
+            fail(err) {
+              //无历史则创建一个
+              const arr = [{
+                id: data.detail.id,
+                image: data.detail.image,
+                price: data.detail.price,
+                title: data.detail.title,
+                saleNum: data.detail.saleNum
+              }]
+              wx.setStorageSync('browse', arr)
+            }
           })
         }
       })
+      .catch((err)=>[
+        console.log(err)
+      ])
   },
 
   /**

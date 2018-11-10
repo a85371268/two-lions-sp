@@ -4,30 +4,25 @@
         <view class="weui-search-bar__form">
             <view class="weui-search-bar__box">
                 <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" bindinput="inputTyping" auto-focus />
                 <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
                     <icon type="clear" size="14"></icon>
                 </view>
             </view>
-            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-                <icon class="weui-icon-search" type="search" size="14"></icon>
-                <view class="weui-search-bar__text">搜索</view>
-            </label>
         </view>
-        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        <view class="weui-search-bar__cancel-btn" bindtap="searchWord">搜索</view>
     </view>
 </view>
 <view class='searchList'>
   <view class='title'>
     <text>历史搜索</text>
-    <text>删除记录</text>
+    <view class='delete' bindtap='delSearched'>
+      <text>删除记录</text>
+      <image src='/assets/icon/shanchu.png'></image>
+    </view>
   </view>
   <view calss="items-wrapper">
-    <view class='items'>蓝牙耳机</view>
-    <view class='items'>蓝牙耳机</view>
-    <view class='items'>蓝牙耳机</view>
-    <view class='items'>蓝牙耳机</view>
-    <view class='items'>蓝牙耳机</view>
+    <view class='items' wx:for="{{searchList}}" wx:key="{{item}}" bindtap="searchWord" data-text="{{item}}">{{item}}</view>
   </view>
 </view>
 <view class='hotList'>
@@ -35,6 +30,6 @@
     <text>热门搜索</text>
   </view>
   <view calss="items-wrapper">
-    <view class='items' wx:for="{{hotList}}" wx:item="{{item}}" catchtap='searchOne'>{{item}}</view>
+    <view class='items' wx:for="{{hotList}}" wx:key="{{item}}" wx:item="{{item}}" bindtap="searchWord" data-text="{{item}}">{{item}}</view>
   </view>
 </view>

@@ -31,8 +31,8 @@
   <view class='tl-home-toplist'>
     <view class='toplist-title'>
       <text>每日Top5</text>
-      <view class='title-right'>
-        <text>查看全部</text>
+      <view class='title-right' bindtap='goMall'>
+        <text>更多商品</text>
         <image src='/assets/icon/goto.png'></image>
       </view>
     </view>
@@ -49,7 +49,7 @@
   </view>
   <view class='tl-home-listtitle'>
     <text class='line'></text>
-    <text class='title'>双11必买，每日更新</text>
+    <text class='title'>{{listTitle}}</text>
     <text class='line'></text>
   </view>
   <view class='tl-home-list'>
@@ -58,6 +58,9 @@
         <image src='{{item.image}}'></image>
       </view>
       <list-item item="{{item}}" wx:else></list-item>
+      <view class="weui-loadmore weui-loadmore_line" wx:if="{{isEnd}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">已经是最后一页了</view>
+      </view>
     </view>   
   </view>
 </view>

@@ -8,6 +8,11 @@ Page({
     isLogin:false,
     userInfo:0
   },
+  goBrowse(){
+    wx.navigateTo({
+      url: '/pages/browse/browse',
+    })
+  },
   goCart(){
     wx.switchTab({
       url:'/pages/cart/cart'

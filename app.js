@@ -16,12 +16,27 @@ App({
     })
   },
   checkboxChange(id) {
-      this.cart= this.cart.map((val) => {
-        if (val.id == id) {
-          val.isChecked = !val.isChecked
-        }
-        return val
+    this.cart= this.cart.map((val) => {
+      if (val.id == id) {
+        val.isChecked = !val.isChecked
+      }
+      return val
+    })
+  },
+  checkedAll(isAll) {
+    if (isAll === true) {
+      const newData = this.cart.map((item) => {
+        item.isChecked = true;
+        return item
       })
+      this.cart = newData;
+    } else {
+      const newData = this.cart.map((item) => {
+        item.isChecked = false;
+        return item
+      })
+      this.cart = newData;
+    }
   },
   reduceCount(id) {
     //把这个item的数量减1并同步到storage

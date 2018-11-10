@@ -8,7 +8,10 @@
     "pages/detail/datail",
     "pages/list/list",
     "pages/search/search",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/searchList/searchList",
+    "pages/browse/browse",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"dark",

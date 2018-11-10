@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "list-item": "/components/ListItem/ListItem"
+  },
+  "navigationBarTitleText":"浏览历史"
+}

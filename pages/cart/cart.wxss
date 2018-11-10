@@ -59,9 +59,15 @@ page{
   transition: transform 0.4s;
 }
 .body-item .check-one{
-  padding: 40rpx 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
-.body-item image{
+.body-item .check-one image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.body-item>image{
   width: 160rpx;
   height: 160rpx;
   margin-left: 16rpx;
@@ -134,6 +140,14 @@ page{
 .tl-cart-bottom .checkAll{
   font-size: 26rpx;
   color: #666666;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+.tl-cart-bottom .checkAll image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
 }
 .tl-cart-bottom .checkAll checkbox{
   margin-right: 10rpx;
@@ -160,4 +174,29 @@ page{
   border: 0;
   margin-left: 10rpx;
   font-size: 32rpx;
+}
+
+.no-cart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 300rpx;
+}
+.no-cart>image{
+  position: absolute;
+  width: 350rpx;
+  height: 350rpx;
+  top: -120rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.no-cart>text{
+  text-align: center;
+  color: #666;
+}
+.no-cart>button{
+  width: 400rpx;
+  margin-top: 100rpx;
 }

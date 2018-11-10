@@ -1,9 +1,11 @@
 /* components/Home/ListItem.wxss */
 .list-item{
+  display: inline-block;
   width: 357rpx;
   height: 541rpx;
   background: white;
-  margin-bottom: 12rpx;
+  margin-top: 12rpx;
+  margin-left: 13rpx;
 }
 .list-item>image{
   width: 100%;

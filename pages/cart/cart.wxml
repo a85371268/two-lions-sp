@@ -3,7 +3,12 @@
   <view class='tl-cart-header'>
     <text>共{{cartData.length}}件宝贝</text>
   </view>
-  <view class='tl-cart-body'>
+  <view class='no-cart' wx:if="{{cartData.length===0}}">
+    <image src='/assets/icon/lion.png'></image>
+    <text>您的购物车空空如也~</text>
+    <button class="weui-btn" type="default" plain="true" bindtap='goHome'>去首页逛逛</button>
+  </view>
+  <view class='tl-cart-body' wx:else>
     <view class='body-title'>快来清空购物车吧</view>
     <view
       wx:for="{{cartData}}"
@@ -14,7 +19,10 @@
       class="item-wrap {{item.isTouchMove ? 'touch-move-active' : ''}}"
     >
       <view class='body-item' data-index="{{index}}">
-        <checkbox color='red' class='check-one' catchtap='checkboxChange' data-id='{{item.id}}' checked='{{item.isChecked}}'/>
+        <view class='check-one' catchtap='checkboxChange' data-id='{{item.id}}'>
+          <image src='/assets/icon/xuanzhong.png' wx:if="{{item.isChecked}}"></image>
+          <image src='/assets/icon/weixuan.png' wx:else></image>
+        </view>
         <image src='{{item.image}}' catchtap='goDetail' data-id="{{item.id}}"></image>
         <view class='item-msgs' catchtap='goDetail' data-id="{{item.id}}">
           <view class='msgs-title'>{{item.title}}</view>
@@ -32,9 +40,11 @@
     </view>
   </view>
 </scroll-view>
-<view class='tl-cart-bottom'>
-  <view class='checkAll'>
-    <checkbox color='red' checked='{{isAllChecked}}' catchtap='checkedAll' data-isc="{{!isAllChecked}}"></checkbox>全选
+<view class='tl-cart-bottom' wx:if="{{cartData.length>0}}">
+  <view class='checkAll' catchtap='checkedAll' data-isc="{{!isAllChecked}}">
+    <image src='/assets/icon/xuanzhong.png' wx:if="{{isAllChecked}}"></image>
+    <image src='/assets/icon/weixuan.png' wx:else></image>
+    全选
   </view>
   <view class='countAll'>
     <view class='showCount'>合计：<text>￥{{total}}</text></view>

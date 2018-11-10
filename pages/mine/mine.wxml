@@ -6,10 +6,6 @@
       <i class="iconfont icon-shezhi"></i>
     </view>
     <view class="top-bgbox">
-      <!-- <view class="tl-mine-top-bgbox-title" wx:if="this.loginName">
-        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540897741903&di=4dca31c8b7834b9f2401b28a8201d421&imgtype=0&src=http%3A%2F%2Fimg5q.duitang.com%2Fuploads%2Fitem%2F201507%2F18%2F20150718193340_SNywm.thumb.700_0.jpeg"/>
-        <text catchtap='goLogout'>{{loginName}}</text>
-      </view> -->
       <view class="top-bgbox-title"  v-else catchtap='goLogin'>
         <image wx:if="{{userInfo}}" src="{{userInfo.avatarUrl}}"></image>
         <image wx:else src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540897741903&di=4dca31c8b7834b9f2401b28a8201d421&imgtype=0&src=http%3A%2F%2Fimg5q.duitang.com%2Fuploads%2Fitem%2F201507%2F18%2F20150718193340_SNywm.thumb.700_0.jpeg"></image>
@@ -29,7 +25,7 @@
           <image src='/assets/icon/shoucang.png'></image>
           <text>收藏商品</text>
         </view>
-        <view class='links-item'>
+        <view class='links-item' bindtap='goBrowse'>
           <image src='/assets/icon/lishi.png'></image>
           <text>浏览历史</text>
         </view>
@@ -41,16 +37,16 @@
     <view>签到养竹笋</view>
   </view>
   <view class="tl-mine-bottom">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">推荐小程序给小伙伴</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">求打分好评啦~</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">帮助与反馈</view>
+    <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">关于作者</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
   </view>
