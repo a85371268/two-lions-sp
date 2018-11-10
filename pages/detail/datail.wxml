@@ -18,7 +18,7 @@
       <view class='price-now'>
         <text>￥</text>{{detailData.price}}
       </view>
-      <view class='price-befor'>原价￥{{detailData.price+23}}</view>
+      <view class='price-befor'>原价￥{{oldPrice}}</view>
     </view>
     <view class='sale'>{{detailData.saleNum}}人已买</view>
   </view>

@@ -5,10 +5,17 @@ Page({
     grids:[],
     topList:[],
     list:[],
-    nextPage:0
+    listTitle:"",
+    nextPage:0,
+    isEnd:false
   },
   changeSaleNum(sale){
     return (sale%10000).toFixed(1)
+  },
+  goMall(){
+    wx.switchTab({
+      url: '/pages/mall/mall',
+    })
   },
   goDetail(e) {
     wx.navigateTo({
@@ -27,12 +34,14 @@ Page({
     ajax.get('https://www.xiongmaoyouxuan.com/api/tab/1?start=0')
       .then((resp)=>{
         if (resp.data.code === 200) {
+          console.log(resp.data)
           this.setData({
             banners: resp.data.data.banners,
             grids: resp.data.data.gridsV2,
             topList: resp.data.data.topList,
             list: resp.data.data.items.list,
-            nextPage: resp.data.data.items.nextIndex
+            nextPage: resp.data.data.items.nextIndex,
+            listTitle: resp.data.data.note
           })
         }
       })
@@ -86,7 +95,8 @@ Page({
         if(resp.data.code===200){
           this.setData({
             list:this.data.list.concat(resp.data.data.list),
-            nextPage : resp.data.data.nextIndex
+            nextPage : resp.data.data.nextIndex,
+            isEnd: resp.data.data.isEnd,
           })
         }
       })

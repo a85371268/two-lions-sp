@@ -1,0 +1,9 @@
+<!--pages/browse/browse.wxml-->
+<view class='tl-browse-browsetitle'>
+  <text class='line'></text>
+  <text class='title'>人生就是不断的买买买 (ง •̀_•́)ง</text>
+  <text class='line'></text>
+</view>
+<view class='browse-list'>
+  <list-item wx:for="{{browseList}}" wx:key="item" item="{{item}}"></list-item>
+</view>

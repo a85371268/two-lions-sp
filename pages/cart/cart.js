@@ -11,6 +11,11 @@ Page({
     isAllChecked:false,
     checked:[]
   },
+  goHome(){
+    wx.switchTab({
+      url: '/pages/home/home',
+    })
+  },
   goDetail(e) {
     wx.navigateTo({
       url: `/pages/detail/datail?id=${e.currentTarget.dataset.id}`,
@@ -20,23 +25,10 @@ Page({
     this.setData({
       isAllChecked: e.currentTarget.dataset.isc
     })
-    if (e.currentTarget.dataset.isc===true){
-      const newData = this.data.cartData.map((item)=>{
-        item.isChecked = true
-        return item
-      })
-      this.setData({
-        cartData:newData
-      })
-    }else{
-      const newData = this.data.cartData.map((item) => {
-        item.isChecked = false
-        return item
-      })
-      this.setData({
-        cartData: newData
-      })
-    }
+    app.checkedAll(e.currentTarget.dataset.isc)
+    this.setData({
+      cartData:app.cart
+    })
     this.getsumTotal()
   },
   checkboxChange(e){
@@ -190,6 +182,11 @@ Page({
         isAllChecked: true
       })
     } else {
+      this.setData({
+        isAllChecked: false
+      })
+    }
+    if (wx.getStorageSync('checked').length===0) {
       this.setData({
         isAllChecked: false
       })

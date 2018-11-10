@@ -35,7 +35,7 @@
           <text>留言</text>
         </view>
         <view class='mainThree-two'>
-          <input placeholder="选填：给商家留言(100字以内)" auto-focus></input>
+          <input placeholder="选填：给商家留言(100字以内)"></input>
         </view>
     </view>
     <view class='pay-mainThree'>
@@ -43,7 +43,7 @@
           <text>送货地址</text>
         </view>
         <view class='mainThree-two'>
-          <input auto-focus value='{{address}}' placeholder="必填：请填写收货地址"></input>
+          <input value='{{address}}' placeholder="必填：请填写收货地址"></input>
         </view>
     </view>
     <view class='pay-mainFive'>
@@ -57,7 +57,7 @@
         </view>
          <view class='mainFive-three'>
             <text class='left'>实际付款</text>
-            <text class='right'>￥{{price+freight}}</text>
+            <text class='right'>￥{{realPrice}}</text>
         </view> 
     </view>
 </scroll-view>

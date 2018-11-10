@@ -1,0 +1,9 @@
+<!--pages/about/about.wxml-->
+<text>I'm Clock</text>
+<text>作者姓名：李钟恒</text>
+<text>QQ:963814565</text>
+<text>H5 1805</text>
+<text>项目名称：双狮优选</text>
+<text>项目介绍：这是一个电商小程序</text>
+<text>本程序会有后续的更新（ 大概 ）</text>
+<text>浏览过程中发现各种BUG或者不完善的地方欢迎联系我~</text>

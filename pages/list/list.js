@@ -9,8 +9,10 @@ Page({
     kindsData:[],
     pageId:0,
     sortId:0,
-    nextPage:0
+    nextPage:0,
+    isEnd:false
   },
+  //排序
   sortList(e){
     this.setData({
       sortId:e.detail,
@@ -22,7 +24,8 @@ Page({
         if(resp.data.code===200){
           this.setData({
             kindsData: resp.data.data.items.list,
-            nextPage: resp.data.data.items.nextIndex
+            nextPage: resp.data.data.items.nextIndex,
+            isEnd: resp.data.data.items.isEnd
           })
         }
       })
@@ -30,10 +33,22 @@ Page({
         console.log(err)
       })
   },
-  goDetail(e){
-    wx.navigateTo({
-      url: `/pages/detail/datail?id=${e.currentTarget.dataset.id}`,
-    })
+  //加载更多
+  loadMore(){
+    //请求数据
+    ajax.get(`https://www.xiongmaoyouxuan.com/api/category/${this.data.pageId}/items?start=${this.data.nextPage}&sort=${this.data.sortId}`)
+      .then((resp) => {
+        if (resp.data.code === 200) {
+          this.setData({
+            kindsData: this.data.kindsData.concat(resp.data.data.items.list),
+            nextPage: resp.data.data.items.nextIndex,
+            isEnd: resp.data.data.items.isEnd,
+          })
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -48,7 +63,8 @@ Page({
         if(resp.data.code===200){
           this.setData({
             kindsData: resp.data.data.items.list,
-            nextPage: resp.data.data.items.nextIndex
+            nextPage: resp.data.data.items.nextIndex,
+            isEnd: resp.data.data.items.isEnd
           })
           wx.setNavigationBarTitle({
             title: resp.data.data.categoryName
@@ -99,16 +115,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    //请求数据
-    ajax.get(`https://www.xiongmaoyouxuan.com/api/category/${this.data.pageId}/items?start=${this.data.nextPage}&sort=${this.data.sortId}`)
-      .then((resp) => {
-        if (resp.data.code === 200) {
-          this.setData({
-            kindsData: this.data.kindsData.concat(resp.data.data.items.list),
-            nextPage: resp.data.data.items.nextIndex
-          })
-        }
-      })
+    
   },
 
   /**

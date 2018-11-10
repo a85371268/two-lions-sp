@@ -1,4 +1,5 @@
 {
   "disableScroll":true,
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "优选商城"
 }

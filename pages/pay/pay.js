@@ -9,21 +9,17 @@ Page({
     list:[],
     price:0,
     freight:0,
+    realPrice:0,
     address: "",
     array: ['不限时送货时间', '工作日送货', '双休日、假日送货'],
     index: 0,
     hasAddress: false,
   },
   select: function (e) {
-    
     this.setData({
       index: e.detail.value,
-      freight: e.detail.value*5
-    })
-  },
-  goaddress: function () {
-    wx.navigateTo({
-      url: '',
+      freight: e.detail.value*5,
+      realPrice: (e.detail.value*5 + parseFloat(this.data.price)).toFixed(2)
     })
   },
 
@@ -61,8 +57,6 @@ Page({
                 success(res) {
                   const latitude = res.latitude
                   const longitude = res.longitude
-                  const speed = res.speed
-                  const accuracy = res.accuracy
                   ajax.get(`https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=WBGBZ-VHN33-IRP3N-3ZMXH-BRPJ6-L6B4J`)
                     .then((res) => {
                       _that.setData({
@@ -80,8 +74,6 @@ Page({
               console.log(res)
               const latitude = res.latitude
               const longitude = res.longitude
-              const speed = res.speed
-              const accuracy = res.accuracy
               ajax.get(`https://apis.map.qq.com/ws/geocoder/v1/?location=${latitude},${longitude}&key=WBGBZ-VHN33-IRP3N-3ZMXH-BRPJ6-L6B4J`)
                 .then((res)=>{
                   _that.setData({
@@ -102,7 +94,8 @@ Page({
       return result;
     },0)
     this.setData({
-      price: price
+      price: price.toFixed(2),
+      realPrice: price.toFixed(2)
     })
   }
 })
