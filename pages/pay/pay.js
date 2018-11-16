@@ -30,7 +30,7 @@ Page({
   pay: function (e) {
     wx.showModal({
       title: '支付提示',
-      content: '敢收钱那我怕不是凉了= =',
+      content: '此处连接真实接口',
       showCancel: false,
       success: function (res) {
         if (res.confirm) {

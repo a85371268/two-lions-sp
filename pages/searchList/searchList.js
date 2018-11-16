@@ -19,7 +19,7 @@ Page({
       nextIndex: 0
     })
     //请求数据http://www.xiongmaoyouxuan.com/api/search_more?word=hhh&start=0&sort=0&sa=
-    ajax.get(`https://www.xiongmaoyouxuan.com/api/search_more?word=${this.data.keyWord}&sort=${e.detail}`)
+    ajax.get(`https://www.xiongmaoyouxuan.com/api/search?word=${this.data.keyWord}&sort=${e.detail}`)
       .then((resp) => {
         if (resp.data.code === 200) {
           this.setData({
@@ -37,7 +37,7 @@ Page({
   loadMore(){
     if(!this.data.isEnd){
       //请求数据
-      ajax.get(`http://www.xiongmaoyouxuan.com/api/search_more?word=${this.data.keyWord}&start=${this.data.nextIndex}&sort=${this.data.sortId}`)
+      ajax.get(`http://www.xiongmaoyouxuan.com/api/search?word=${this.data.keyWord}&start=${this.data.nextIndex}&sort=${this.data.sortId}`)
         .then((resp) => {
           if (resp.data.code === 200) {
             console.log(resp)
@@ -61,7 +61,7 @@ Page({
       title: `搜索:${options.keyWord}`,
     })
     //请求数据
-    ajax.get(`https://www.xiongmaoyouxuan.com/api/search_more?word=${options.keyWord}`)
+    ajax.get(`https://www.xiongmaoyouxuan.com/api/search?word=${options.keyWord}`)
       .then((res)=>{
         if(res.data.code===200){
           this.setData({
