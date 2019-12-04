@@ -2,11 +2,11 @@
   <view class='tl-home-swiper'>
     <swiper
       class='swiper-wrapper'
-      indicator-dots=true
+      indicator-dots="{{true}}"
       indicator-color="#ffffff"
       indicator-active-color="#f8e078"
-      autoplay=true
-      circular=true
+      autoplay="{{true}}"
+      circular="{{true}}"
       duration="500"
       interval="3000"
     >

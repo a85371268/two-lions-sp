@@ -1,10 +1,10 @@
 <!--pages/detail/datail.wxml-->
-<scroll-view class='tl-detail' scroll-y>
-  <view class='tl-detail-swiper'>
+<scroll-view class="tl-detail" scroll-y>
+  <view class="tl-detail-swiper">
     <swiper
       indicator-dots="{{indicatorDots}}"
-      indicator-dots=true
-      indicator-active-color='#e76360'
+      indicator-dots="{{true}}"
+      indicator-active-color="#e76360"
     >
       <block wx:for="{{imgUrls}}" wx:key="{{item}}">
         <swiper-item>
@@ -13,61 +13,61 @@
       </block>
     </swiper>
   </view>
-  <view class='show-price'>
-    <view class='price-top'>
-      <view class='price-now'>
+  <view class="show-price">
+    <view class="price-top">
+      <view class="price-now">
         <text>￥</text>{{detailData.price}}
       </view>
-      <view class='price-befor'>原价￥{{oldPrice}}</view>
+      <view class="price-befor">原价￥{{oldPrice}}</view>
     </view>
-    <view class='sale'>{{detailData.saleNum}}人已买</view>
+    <view class="sale">{{detailData.saleNum}}人已买</view>
   </view>
-  <view class='msgs'>
-    <view class='msgs-title'>
+  <view class="msgs">
+    <view class="msgs-title">
       <text>{{detailData.title}}</text>
     </view>
-    <view class='promise'>
-      <view class='promise-item' wx:for="{{detailData.accessoryHints}}" wx:key="{{item}}">
-        <image src='/assets/icon/gouxuan.png'></image>
+    <view class="promise">
+      <view class="promise-item" wx:for="{{detailData.accessoryHints}}" wx:key="{{item}}">
+        <image src="/assets/icon/gouxuan.png"></image>
         <text>{{item}}</text>
       </view>
     </view>
   </view>
-  <view class='shop'>
-    <view class='left'>
-      <view class='left-image'>
-        <image src='{{shopData.picUrl}}'></image>
+  <view class="shop">
+    <view class="left">
+      <view class="left-image">
+        <image src="{{shopData.picUrl}}"></image>
       </view>
-      <view class='shop-msg'>
-        <view class='shop-title'>{{shopData.title}}</view>
-        <view class='shop-score'>
+      <view class="shop-msg">
+        <view class="shop-title">{{shopData.title}}</view>
+        <view class="shop-score">
           <text>描述：{{shopData.deliveryScore}}</text>
           <text>服务：{{shopData.ittemScore}}</text>
           <text>服务：{{shopData.serviceScore}}</text>
         </view>
       </view>
     </view>
-    <view class='right'>
+    <view class="right">
       <text>更多优惠</text>
-      <image src='/assets/icon/goto.png'></image>
+      <image src="/assets/icon/goto.png"></image>
     </view>
   </view>
-  <view class='details-title'>
-    <text class='line'></text>
-    <text class='text'>图文详情</text>
-    <text class='line'></text>
+  <view class="details-title">
+    <text class="line"></text>
+    <text class="text">图文详情</text>
+    <text class="line"></text>
   </view>
-  <view class='details-pics'>
+  <view class="details-pics">
     <image
      wx:for="{{imgs}}"
      wx:key="{{item}}"
      wx:if="{{item.type===1}}"
-     src='{{item.image.url}}'
+     src="{{item.image.url}}"
      mode="widthFix"
     ></image>
   </view>
 </scroll-view>
-<view class='btns'>
-  <view class='btn btn-left' bindtap='addCart' data-data="{{detailData}}">加入购物车</view>
-  <view class='btn btn-right' bindtap='goPay'>立即购买</view>
+<view class="btns">
+  <view class="btn btn-left" bindtap="addCart" data-data="{{detailData}}">加入购物车</view>
+  <view class="btn btn-right" bindtap="goPay">立即购买</view>
 </view>

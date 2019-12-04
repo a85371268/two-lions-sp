@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/mall/mall",
     "pages/cart/cart",
@@ -13,13 +13,13 @@
     "pages/browse/browse",
     "pages/about/about"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#FDE25C",
     "navigationBarTitleText": "双狮优选",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#f5f5f5",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f5f5",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#b2b2b2",
@@ -28,8 +28,8 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath":"assets/icon/home.png",
-        "selectedIconPath":"assets/icon/home-selected.png"
+        "iconPath": "assets/icon/home.png",
+        "selectedIconPath": "assets/icon/home-selected.png"
       },
       {
         "pagePath": "pages/mall/mall",
@@ -50,5 +50,6 @@
         "selectedIconPath": "assets/icon/mine-selected.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
